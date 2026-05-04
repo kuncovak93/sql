@@ -88,7 +88,7 @@ document.getElementById("loginButton").onclick = function () {
         username.includes("' OR '1'='1") ||
         password.includes("' OR '1'='1")
     ) {
-        result.innerText = "Prihlásenie úspešné pomocou SQL Injection!";
+        result.innerText = "Prihlásenie úspešné pomocou SQL Injection.";
         result.style.color = "red";
     } 
     else if (username === "admin" && password === "1234") {
