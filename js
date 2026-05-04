@@ -1,15 +1,23 @@
 function login() {
-    let username = document.getElementById("username").value;
-    let password = document.getElementById("password").value;
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const result = document.getElementById("result");
 
-    // simulácia SQL Injection
-    if (username.includes("' OR '1'='1") || password.includes("' OR '1'='1")) {
-        document.getElementById("result").innerText = "Prihlásenie úspešné (SQL Injection!)";
+    if (
+        username.includes("' OR '1'='1") ||
+        password.includes("' OR '1'='1")
+    ) {
+        result.innerText = "⚠️ Prihlásenie úspešné pomocou SQL Injection!";
+        result.style.color = "red";
     } 
     else if (username === "admin" && password === "1234") {
-        document.getElementById("result").innerText = "Prihlásenie úspešné";
+        result.innerText = "✅ Prihlásenie úspešné.";
+        result.style.color = "green";
     } 
     else {
-        document.getElementById("result").innerText = "Nesprávne údaje";
+        result.innerText = "❌ Nesprávne meno alebo heslo.";
+        result.style.color = "darkred";
     }
 }
+
+document.getElementById("loginButton").addEventListener("click", login);
