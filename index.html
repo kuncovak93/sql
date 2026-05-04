@@ -77,7 +77,6 @@ WHERE username = '$username' AND password = '$password';</pre>
     </p>
 </section>
 
-<!-- 🔥 FUNKČNÝ JAVASCRIPT -->
 <script>
 function login() {
     const username = document.getElementById("username").value.trim();
@@ -88,15 +87,15 @@ function login() {
         username.includes("' OR '1'='1") ||
         password.includes("' OR '1'='1")
     ) {
-        result.innerText = "⚠️ Prihlásenie úspešné pomocou SQL Injection!";
+        result.innerText = "Prihlásenie úspešné pomocou SQL Injection!";
         result.style.color = "red";
     } 
     else if (username === "admin" && password === "1234") {
-        result.innerText = "✅ Prihlásenie úspešné.";
+        result.innerText = "Prihlásenie úspešné.";
         result.style.color = "green";
     } 
     else {
-        result.innerText = "❌ Nesprávne meno alebo heslo.";
+        result.innerText = "Nesprávne meno alebo heslo.";
         result.style.color = "darkred";
     }
 }
@@ -108,7 +107,7 @@ document.getElementById("loginButton").onclick = login;
 alert("JavaScript funguje");
 
 document.getElementById("loginButton").onclick = function () {
-    alert("Klikla si na button");
+    alert("Klikol si na button");
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -117,11 +116,11 @@ document.getElementById("loginButton").onclick = function () {
     result.innerHTML = "TEST FUNGUJE";
 
     if (username === "admin" && password === "1234") {
-        result.innerHTML = "✅ Prihlásenie úspešné.";
+        result.innerHTML = "Prihlásenie úspešné.";
     } else if (username.includes("OR") || password.includes("OR")) {
-        result.innerHTML = "⚠️ SQL Injection funguje!";
+        result.innerHTML = "SQL Injection funguje!";
     } else {
-        result.innerHTML = "❌ Nesprávne údaje.";
+        result.innerHTML = "Nesprávne údaje.";
     }
 };
 </script>
