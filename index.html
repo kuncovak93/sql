@@ -78,7 +78,8 @@ WHERE username = '$username' AND password = '$password';</pre>
 </section>
 
 <script>
-function login() {
+document.getElementById("loginButton").onclick = function () {
+
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
     const result = document.getElementById("result");
@@ -87,43 +88,20 @@ function login() {
         username.includes("' OR '1'='1") ||
         password.includes("' OR '1'='1")
     ) {
-        result.innerText = "Prihlásenie úspešné pomocou SQL Injection!";
+        result.innerText = "⚠️ Prihlásenie úspešné pomocou SQL Injection!";
         result.style.color = "red";
     } 
     else if (username === "admin" && password === "1234") {
-        result.innerText = "Prihlásenie úspešné.";
+        result.innerText = "✅ Prihlásenie úspešné.";
         result.style.color = "green";
     } 
     else {
-        result.innerText = "Nesprávne meno alebo heslo.";
+        result.innerText = "❌ Nesprávne meno alebo heslo.";
         result.style.color = "darkred";
-    }
-}
-
-document.getElementById("loginButton").onclick = login;
-</script>
-
-<script>
-alert("JavaScript funguje");
-
-document.getElementById("loginButton").onclick = function () {
-    alert("Klikol si na button");
-
-    const username = document.getElementById("username").value;
-    const password = document.getElementById("password").value;
-    const result = document.getElementById("result");
-
-    result.innerHTML = "TEST FUNGUJE";
-
-    if (username === "admin" && password === "1234") {
-        result.innerHTML = "Prihlásenie úspešné.";
-    } else if (username.includes("OR") || password.includes("OR")) {
-        result.innerHTML = "SQL Injection funguje!";
-    } else {
-        result.innerHTML = "Nesprávne údaje.";
     }
 };
 </script>
+
 
 </body>
 </html>
