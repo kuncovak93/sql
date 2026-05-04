@@ -104,5 +104,27 @@ function login() {
 document.getElementById("loginButton").onclick = login;
 </script>
 
+<script>
+alert("JavaScript funguje");
+
+document.getElementById("loginButton").onclick = function () {
+    alert("Klikla si na button");
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const result = document.getElementById("result");
+
+    result.innerHTML = "TEST FUNGUJE";
+
+    if (username === "admin" && password === "1234") {
+        result.innerHTML = "✅ Prihlásenie úspešné.";
+    } else if (username.includes("OR") || password.includes("OR")) {
+        result.innerHTML = "⚠️ SQL Injection funguje!";
+    } else {
+        result.innerHTML = "❌ Nesprávne údaje.";
+    }
+};
+</script>
+
 </body>
 </html>
