@@ -25,6 +25,7 @@
         <li>obídenie prihlasovania</li>
         <li>zobrazenie citlivých údajov</li>
         <li>mazanie dát</li>
+        <li>úplné ovládnutie databázy</li>
     </ul>
 </section>
 
@@ -38,7 +39,7 @@ WHERE username = '$username' AND password = '$password';
 
 <section>
     <h2>4. Ukážka útoku</h2>
-    <p>Zadaj do formulára:</p>
+    <p>Skús zadať:</p>
     <code>' OR '1'='1</code>
 
     <h3>Simulácia prihlasovania</h3>
@@ -51,8 +52,31 @@ WHERE username = '$username' AND password = '$password';
 </section>
 
 <section>
-    <h2>5. Ochrana</h2>
-    <p>Používaj prepared statements a kontroluj vstupy.</p>
+    <h2>5. Následky útoku</h2>
+    <ul>
+        <li>únik databázových údajov</li>
+        <li>zobrazenie emailov a hesiel</li>
+        <li>mazanie alebo úprava dát</li>
+        <li>možné ovládnutie systému</li>
+    </ul>
+</section>
+
+<section>
+    <h2>6. Ako sa chrániť</h2>
+    <ul>
+        <li>používanie prepared statements</li>
+        <li>kontrola vstupov</li>
+        <li>používanie bezpečných frameworkov</li>
+        <li>testovanie bezpečnosti</li>
+    </ul>
+</section>
+
+<section>
+    <h2>7. Záver</h2>
+    <p>
+        SQL Injection je vážna bezpečnostná chyba, ktorá môže spôsobiť únik citlivých údajov.
+        Preto je dôležité myslieť na bezpečnosť už pri vývoji aplikácií.
+    </p>
 </section>
 
 <script src="script.js"></script>
