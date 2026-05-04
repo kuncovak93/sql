@@ -31,22 +31,20 @@
 
 <section>
     <h2>3. Zraniteľný kód</h2>
-    <pre>
-SELECT * FROM users 
-WHERE username = '$username' AND password = '$password';
-    </pre>
+    <pre>SELECT * FROM users 
+WHERE username = '$username' AND password = '$password';</pre>
 </section>
 
 <section>
     <h2>4. Ukážka útoku</h2>
-    <p>Skús zadať:</p>
+    <p>Skús zadať do mena alebo hesla:</p>
     <code>' OR '1'='1</code>
 
     <h3>Simulácia prihlasovania</h3>
 
     <input type="text" id="username" placeholder="Meno">
     <input type="password" id="password" placeholder="Heslo">
-    <button onclick="login()">Prihlásiť</button>
+    <button type="button" id="loginButton">Prihlásiť</button>
 
     <p id="result"></p>
 </section>
