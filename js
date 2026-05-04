@@ -10,15 +10,15 @@ document.addEventListener("DOMContentLoaded", function () {
             username.includes("' OR '1'='1") ||
             password.includes("' OR '1'='1")
         ) {
-            result.innerText = "⚠️ Prihlásenie úspešné pomocou SQL Injection!";
+            result.innerText = "Prihlásenie úspešné pomocou SQL Injection!";
             result.style.color = "red";
         } 
         else if (username === "admin" && password === "1234") {
-            result.innerText = "✅ Prihlásenie úspešné.";
+            result.innerText = "Prihlásenie úspešné.";
             result.style.color = "green";
         } 
         else {
-            result.innerText = "❌ Nesprávne meno alebo heslo.";
+            result.innerText = "Nesprávne meno alebo heslo.";
             result.style.color = "darkred";
         }
     });
